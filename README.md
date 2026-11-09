@@ -1,6 +1,6 @@
 # robendevs-foundation-saikat
 
-## Day 1 — Networking
+## Day 1-2 — Networking
 
 - IPv4 and IPv6
 - Private and public IP addresses
