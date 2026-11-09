@@ -44,3 +44,27 @@
 - DOM, CSSOM, layout, and paint diagram
 
 [Notes and study materials](day-02-browser-internals/README.md) · [Rendering pipeline diagram](day-02-browser-internals/rendering-pipeline.md) · [Handwritten notes](day-02-browser-internals/Note.pdf)
+
+## Day 3 — JavaScript in Depth
+
+- Variables, scope, hoisting, and the temporal dead zone
+- Functions, closures, arrow functions, and this
+- Objects, prototypes, inheritance, and classes
+- Primitive and reference values, type coercion, and equality
+- ES modules, import, and export
+- Execution contexts, call stack, and heap
+- Callbacks, promises, async/await, and error handling
+- Event loop, tasks, microtasks, and execution order
+- Iterators and generators
+- Garbage collection, memory leaks, and weak references
+- Proxy, Reflect, and property descriptors
+- V8 hidden classes, inline caches, and deoptimisation
+- Concurrency, parallelism, and AbortController
+- Mixed promises and timers execution order
+- How a closure can retain unwanted memory
+
+[Notes and study materials](day-03-javascript/README.md)
+
+## Presentations
+
+[CP 1 slides folder](presentations/README.md) will be filled later.
