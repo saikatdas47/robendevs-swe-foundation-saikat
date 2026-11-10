@@ -1,21 +1,30 @@
 # Day 3 JavaScript in Depth
 
-[Read my notes](notes.md)
+I follow each example from its first line to its output, then explain why it behaves that way. My notes include the examples, diagrams and highlighted points from my Word document.
 
-[Open the Word document](Day%203%20JavaScript%20Notes.docx)
+- [Full study notes](notes.md)
+- [English Word document](Day%203%20JavaScript%20Notes.docx)
+- [Research tasks](research-task.md)
 
-## Research task
+## My reading order
 
-[Task 1 Execution order of promises, timers and synchronous code](research-task.md#task-1-predict-and-explain-the-execution-order)
+1. Variables, scope, hoisting and the temporal dead zone.
+2. Functions, closures, `this`, prototypes and classes.
+3. Primitive values, immutability, references, equality and modules.
+4. Execution contexts, the call stack and the heap.
+5. Callbacks, callback hell, promises and `async`/`await`.
+6. Tasks, microtasks, the event loop, threads and Web Workers.
+7. Iterators, generators, garbage collection and weak references.
+8. Proxy, Reflect, property descriptors and V8 optimisation.
+9. Concurrency, cancellation and the two research tasks.
 
-[Task 2 How a closure can cause a memory leak](research-task.md#task-2-explain-how-a-closure-can-cause-a-memory-leak)
+I run independent examples separately. Related snippets share the setup stated in the notes. Scheduling examples use the browser unless I say otherwise; sample API calls need their matching implementation or server endpoint.
 
-Both answers are also in the Word document on pages 11 to 13.
+## Research tasks
 
-## Notes
+- [Predict the execution order of promises, timers and synchronous code](research-task.md#task-1-predict-and-explain-the-execution-order).
+- [Explain how a closure can retain unwanted memory](research-task.md#task-2-explain-how-a-closure-can-cause-a-memory-leak).
 
-I cover variables, scope, closures, this, prototypes, classes, types and ES modules. This also includes the call stack, promises, async code, the event loop, iterators, generators, memory, Proxy, Reflect, V8 and cancellation.
+The Markdown notes follow the English Word document. The diagrams are in [images](images/). I keep my Bangla study copy outside this repository.
 
-The research sections explain the order of mixed promises, timers and synchronous code, and how a closure can retain unwanted memory. The original JavaScript diagrams are kept with the notes.
-
-CP 1 slides will be added to the [presentations folder](../presentations/README.md) later.
+[CP 1 presentations](../presentations/README.md)

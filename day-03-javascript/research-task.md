@@ -1,6 +1,6 @@
 # Day 3 Research Task
 
-This includes both research answers from my notes. The same material is in the Word document on pages 11 to 13.
+I use the two worked examples from my [JavaScript notes](notes.md): execution order and memory retained by a closure.
 
 ## Task 1 Predict and explain the execution order
 
@@ -77,7 +77,7 @@ cleanup()
 cleanup = null
 ```
 
-![JavaScript learning diagram 6](images/diagram-06.png)
+![JavaScript study diagram 13](images/diagram-06.png)
 
 This diagram shows how a listener can keep captured data alive.
 
