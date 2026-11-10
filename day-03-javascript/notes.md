@@ -144,6 +144,41 @@ I can use a closure for private state. Each new call to makeCounter creates a se
 
 ![JavaScript study diagram 3](images/doc-diagram-03.png)
 
+### I keep separate account balances with closures
+
+I use this example to see how a returned function remembers and updates an outer variable after the outer call has finished.
+
+```javascript
+function createaccount(initbalance) {
+  let balance = initbalance;
+
+  return function getBalance(account) {
+    balance += account;
+    console.log(`Your balance is ${balance}`);
+  };
+}
+
+const myAccount = createaccount(100);
+myAccount(50); // Your balance is 150
+myAccount(25); // Your balance is 175
+
+let myAccount2 = createaccount(200);
+myAccount2(100); // Your balance is 300
+myAccount2(50);  // Your balance is 350
+```
+
+1. I call createaccount(100). This call creates its own balance binding and initialises it to 100. I return the getBalance function itself; I do not call it yet.
+
+2. I store that function in myAccount. Although createaccount has finished, the returned function keeps access to this call’s balance. That retained access is the closure.
+
+3. myAccount(50) gives account the value 50 and updates balance from 100 to 150. myAccount(25) uses the same binding, so it updates 150 to 175. The balance does not reset on each inner call.
+
+4. createaccount(200) is a new outer call with a separate balance binding. I store its returned function in myAccount2. Its calls change that balance from 200 to 300 and then 350, without changing myAccount’s balance of 175.
+
+The variable names myAccount and myAccount2 hold functions, not account objects. Both returned functions use the same code, but each has access to its own outer call’s state. I cannot access either balance directly by its local name from outside.
+
+I write return function getBalance(account) { ... } because returning a function expression requires the function keyword here. In this example account is the amount I add, so amount would be a clearer parameter name. Despite its name, getBalance adds money and prints the new balance; it does not merely read or return the balance.
+
 ### Different ways I use functions
 
 These examples run separately. A declaration, an expression and an arrow are different ways to define a function. A callback describes how a function is used; it can use any of these forms.
