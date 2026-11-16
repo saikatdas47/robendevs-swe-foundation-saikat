@@ -8,6 +8,12 @@ A simple mobile-style product catalog built with **React, Vite, JavaScript, plai
 | --- | --- |
 | <img src="docs/screenshots/product-list.jpg" alt="Mobile product grid with images, prices and ratings" width="280"> | <img src="docs/screenshots/product-detail.jpg" alt="Product detail page with image, price and description" width="280"> |
 
+## Lighthouse result
+
+![Lighthouse scores: Performance 94, Accessibility 100, Best Practices 100, SEO 92](SS_LightHouse.png)
+
+Scores shown in this screenshot: **Performance 94 · Accessibility 100 · Best Practices 100 · SEO 92**. Results can vary by device, network and test settings.
+
 ## Run locally
 
 Use Node.js 22.12+ and npm.
@@ -120,6 +126,6 @@ Product content currently requires JavaScript. Client-side titles and a Lighthou
 
 Also check scrolling, keyboard navigation, retry after blocking API requests, an invalid product ID, and narrow screen widths. In Network → Fetch/XHR, the list should request skips `0, 10`, then `20, 30`.
 
-No measured Lighthouse report is included in this repository; scores depend on the device, network and test settings.
+The screenshot above shows one Lighthouse run; the full HTML/JSON report is not included.
 
 When deploying `dist` to a static host, configure an SPA fallback to `index.html` so refreshing a URL such as `/products/1` works.
