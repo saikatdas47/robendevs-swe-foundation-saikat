@@ -1,5 +1,7 @@
 # React Product Listing
 
+**Version:** lazy loading + infinite scroll (all loaded cards stay in the DOM). For the virtualized comparison, see [SEOAssignment-Virtualized](../SEOAssignment-Virtualized/README.md).
+
 A simple mobile-style product catalog built with **React, Vite, JavaScript, plain CSS and React Router**. Product data comes from [DummyJSON](https://dummyjson.com/docs/products). No login or API key is needed.
 
 ## Screenshots

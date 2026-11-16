@@ -14,7 +14,7 @@ export default function App() {
           Products
         </Link>
       </header>
-      <Suspense fallback={<main id="main" className="message" role="status">Opening product…</main>}>
+      <Suspense fallback={<main id="main" className="message" role="status">Loading product…</main>}>
         <Routes>
           <Route path="/" element={<ProductList />} />
           <Route path="/products/:id" element={<ProductDetail />} />

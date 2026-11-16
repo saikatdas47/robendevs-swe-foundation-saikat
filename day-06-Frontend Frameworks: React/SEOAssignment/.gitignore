@@ -1,3 +1,33 @@
+# Installed dependencies and generated builds
 node_modules/
 dist/
+coverage/
+
+# Local caches and logs
+.vite/
+.cache/
+.eslintcache
+*.log
+*.tsbuildinfo
+
+# Local AI/agent settings and cloud credentials
+.codex/
+.agents/
+.aws/
+
+# Environment secrets (keep safe example templates)
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Personal editor and operating-system files
+.vscode/
+.idea/
+*.swp
+*.swo
 .DS_Store
+Thumbs.db
+
+# Obsolete preview; current README screenshots stay in Git
+/preview.jpg
