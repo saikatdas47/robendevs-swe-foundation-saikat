@@ -1,5 +1,7 @@
 # React Product Listing — Lazy Loading + Virtualization
 
+[← Compare both versions](../README.md)
+
 Virtualized version of the neighboring `SEOAssignment` project, with the same design and routes. Built with **React, Vite, JavaScript, plain CSS and React Router**. Product data comes from [DummyJSON](https://dummyjson.com/docs/products). No login or API key is needed.
 
 ## Screenshots
@@ -87,11 +89,11 @@ In `api.js`, `BATCH_SIZE = 10` means **10 products per request**. `loadMore()` i
 
 *Assuming enough products and no duplicate IDs; the last cycle can be smaller.*
 
-- **`limit`**: সর্বোচ্চ কতটি product আনবে।
-- **`skip` / `nextSkip`**: শুরু থেকে কতটি বাদ দেবে; starts at 0 and advances by 20.
-- **`products.length`**: এখন পর্যন্ত কতটি unique product জমেছে।
-- **`incoming.length`**: এই cycle-এর দুই response মিলিয়ে কতটি এসেছে।
-- **`total`**: API-তে মোট কতটি product আছে; not hardcoded.
+- **`limit`**: The maximum number of products per request.
+- **`skip` / `nextSkip`**: The number of products to skip from the beginning; starts at 0 and advances by 20.
+- **`products.length`**: The number of unique products loaded so far.
+- **`incoming.length`**: The combined number of products returned by both requests in this cycle.
+- **`total`**: The total number of products reported by the API; not hardcoded.
 
 The first effect calls `loadMore()`. After that, `IntersectionObserver` watches the bottom marker with a 300px margin and loads the next pair as you approach it. The button is a manual alternative.
 
@@ -129,7 +131,7 @@ Product content currently requires JavaScript. Client-side titles and a Lighthou
 
 Also check scrolling, keyboard navigation, retry after blocking API requests, an invalid product ID, and narrow screen widths. In Network → Fetch/XHR, the list should request skips `0, 10`, then `20, 30`.
 
-No Lighthouse score has been measured for this virtualized version. The original version’s score does not apply here.
+The project author reported a Lighthouse Performance score of **95** for this version, compared with **94** for the original. No screenshot or full report for the 95 run is attached yet. This 1-point difference alone does not establish that virtualization caused the increase; compare runs under the same conditions.
 
 When deploying `dist` to a static host, configure an SPA fallback to `index.html` so refreshing a URL such as `/products/1` works.
 
