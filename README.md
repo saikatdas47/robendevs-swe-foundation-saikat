@@ -63,7 +63,7 @@
 - Mixed promises and timers execution order
 - How a closure can retain unwanted memory
 
-[Study guide](day-03-javascript/README.md) · [Full notes](day-03-javascript/notes.md) · [English Word document](day-03-javascript/Day%203%20JavaScript%20Notes.docx) · [Research tasks](day-03-javascript/research-task.md)
+[Notes and reading order](day-03-javascript/README.md) · [Practice code](day-03-javascript/JS%20PRACTICE/) · [Research tasks](day-03-javascript/research-task.md)
 
 ## Presentations
 

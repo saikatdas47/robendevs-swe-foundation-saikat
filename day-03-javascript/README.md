@@ -1,30 +1,21 @@
-# Day 3 JavaScript in Depth
+# Day 3 - JavaScript
 
-I follow each example from its first line to its output, then explain why it behaves that way. My notes include the examples, diagrams and highlighted points from my Word document.
+I read my notes in this order. Each file covers a different part of the topic.
 
-- [Full study notes](notes.md)
-- [English Word document](Day%203%20JavaScript%20Notes.docx)
-- [Research tasks](research-task.md)
+| Order | Note | What I keep here |
+| --- | --- | --- |
+| 1 | [Variables, Scope, Functions, Types, Modules](Variables_Scope_Functions_Types_Modules.md) | var/let/const, block scope, hoisting, TDZ, closures, arrows, this, primitives and objects, coercion, equality, import/export |
+| 2 | [Objects, Prototypes, Inheritance, Classes](Objects_Prototypes_Inheritance_Classes.md) | Detailed prototype lookup, own vs inherited properties, constructors, new, extends/super, private fields, getters/setters, static methods and composition |
+| 3 | [Callbacks, Callback Hell, Promises, Async/Await](CallBack_CallbackHell_Promises_AsysncAwait.md) | My calculator, nested data fetching, returned promise chains, weather examples, errors, IIFE and top-level await |
+| 4 | [Event Loop, Call Stack, Execution Context, Iteration](EventLoop_CallStack_ExecutionContext_CallbackQueue.md) | GEC/FEC and memory steps, browser timers, callback queue, tasks vs microtasks, execution order, iterators and generators |
+| 5 | [Memory, Metaprogramming, Engine Internals, Concurrency](Memory_Metaprogramming_EngineInternals_Concurrency.md) | Short idea notes: garbage collection, leaks, weak references, descriptors, Proxy/Reflect, V8 shapes and caches, deoptimisation, concurrency vs parallelism and AbortController |
 
-## My reading order
+## My practice and references
 
-1. Variables, scope, hoisting and the temporal dead zone.
-2. Functions, closures, `this`, prototypes and classes.
-3. Primitive values, immutability, references, equality and modules.
-4. Execution contexts, the call stack and the heap.
-5. Callbacks, callback hell, promises and `async`/`await`.
-6. Tasks, microtasks, the event loop, threads and Web Workers.
-7. Iterators, generators, garbage collection and weak references.
-8. Proxy, Reflect, property descriptors and V8 optimisation.
-9. Concurrency, cancellation and the two research tasks.
+- [Callback, promise and async practice](JS%20PRACTICE/Callback_Hell_Promises_Async_Await/).
+- [Event-loop and timer practice](JS%20PRACTICE/EventLoop%2CCallBack%20Queue%2C%20Call%20Stack/).
+- [Research tasks](research-task.md): mixed execution order and memory retained by a closure.
+- [My handwritten notes](HandNote_Callback_Promise_AsncAwait_ExecutionContext_EventLoop_callStack_callbackQueue.pdf).
+- [JavaScript from Beginner to Professional](JSBook.pdf): my book reference.
 
-I run independent examples separately. Related snippets share the setup stated in the notes. Scheduling examples use the browser unless I say otherwise; sample API calls need their matching implementation or server endpoint.
-
-## Research tasks
-
-- [Predict the execution order of promises, timers and synchronous code](research-task.md#task-1-predict-and-explain-the-execution-order).
-- [Explain how a closure can retain unwanted memory](research-task.md#task-2-explain-how-a-closure-can-cause-a-memory-leak).
-
-The Markdown notes follow the English Word document. The diagrams are in [images](images/). I keep my Bangla study copy outside this repository.
-
-[CP 1 presentations](../presentations/README.md)
+I run independent examples separately. Browser examples use browser APIs; a demo endpoint must exist before I can fetch it. I keep module examples in their stated separate files.

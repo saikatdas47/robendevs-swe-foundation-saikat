@@ -1,6 +1,6 @@
 # Day 3 Research Task
 
-I use the two worked examples from my [JavaScript notes](notes.md): execution order and memory retained by a closure.
+I use the two worked examples from my [execution-order notes](EventLoop_CallStack_ExecutionContext_CallbackQueue.md): execution order and memory retained by a closure.
 
 ## Task 1 Predict and explain the execution order
 
@@ -72,9 +72,12 @@ cleanup()
 cleanup = null
 ```
 
-![JavaScript study diagram 13](images/diagram-06.png)
+```text
+window → resize listener (showSize) → captured rows
+cleanup → showSize → captured rows
+```
 
-This diagram shows how a listener can keep captured data alive.
+I remove the listener and drop cleanup so neither path keeps the data alive unnecessarily.
 
 1. mount creates rows and showSize. showSize captures rows.
 2. window keeps the registered listener. The listener keeps access to rows.
