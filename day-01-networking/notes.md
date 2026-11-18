@@ -422,3 +422,32 @@ Trace a cold-cache request to `https://shop.example/products`, then explain how 
 6. The gateway's upstream pool is full.
 
 Expected reasoning: (1) no network request is needed; (2) the origin is skipped; (3) a 304 permits cached-body reuse; (4) a retry needs operation-level idempotency; (5) some new connections still target A until clients refresh or choose an alternative; (6) bounded waiting, deadlines and overload handling prevent unbounded buildup. These are study scenarios; no live failure experiment has been performed.
+
+## 22. How I inspect a live request
+
+I use these commands to see what happens at different points in the request path.
+
+| Command | What I look for |
+| --- | --- |
+| `dig robendevs.com` | I check the DNS status, the answer and the TTL in seconds. On Windows, I can use `nslookup robendevs.com` for a basic lookup. |
+| `curl -v https://robendevs.com` | I follow the connection, TLS negotiation and HTTP request and response headers in the verbose output. |
+| `curl -I https://robendevs.com` | I send a HEAD request and check response headers such as `Cache-Control`, `Set-Cookie` and `Server` when present. |
+
+In Chrome DevTools, I open **Network**, reload and hover over the main document's waterfall bar or open its **Timing** tab. I look for DNS lookup, connection setup, SSL, waiting for the first byte (TTFB) and content download. A reused connection can skip the DNS and connection setup phases. [Chrome DevTools Network reference](https://developer.chrome.com/docs/devtools/network/reference)
+
+I open **Privacy and security → Security → Overview → View certificate** to check the certificate's hostname, issuer and expiry date. In **Application**, I inspect cookies and their flags such as `Secure`, `HttpOnly` and `SameSite`, along with **Local Storage** and **Cache Storage** for the origin. [Chrome DevTools certificate viewer](https://developer.chrome.com/docs/devtools/security) · [Application panel](https://developer.chrome.com/docs/devtools/application)
+
+## 23. How I find the failing layer
+
+I start with the symptom and check the likely layer first.
+
+| What I see | Where I start | What I check first |
+| --- | --- | --- |
+| `DNS_PROBE_FINISHED_NXDOMAIN` | DNS | I run `dig` for the hostname and look for `NXDOMAIN` or the expected DNS record. |
+| `ERR_CONNECTION_TIMED_OUT` | Network or TCP | For HTTPS, I check whether the server is listening on port 443 and whether the firewall or security group allows the traffic. |
+| “Your connection is not private” | TLS | I check the certificate's validity dates, hostname and trust chain. |
+| `502 Bad Gateway` | Gateway to upstream | I check whether the app is running and look in the gateway logs for an upstream connection or response error. |
+| `504 Gateway Timeout` | Gateway waiting on upstream | I check gateway timings and app logs for a slow database query or API call. |
+| “Blocked by CORS policy” | Browser cross-origin checks | I inspect the API response and any preflight for the expected `Access-Control-Allow-Origin` header. |
+| Users still see the old version | Caching | I check which asset URL was loaded and its `Cache-Control` header, then confirm the new build points to the versioned filenames. |
+| The page loads but feels frozen | Main thread | I record the interaction in DevTools **Performance** and look for long JavaScript or rendering tasks. |
