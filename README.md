@@ -1,6 +1,6 @@
 # RoBenDevs Foundation Programme
 
-My notes, research tasks and coding assignments for Days 1–7, organised by the folders in this repository.
+My notes, research tasks and coding assignments for Days 1–11, organised by the folders in this repository.
 
 ## Day 1 — Networking, DNS, HTTP/HTTPS and Traffic Routing
 
@@ -74,6 +74,80 @@ The syllabus asks for framework recommendations for an enterprise admin portal, 
 | [Architecture, API security and evolution](day-07-backend-apis/3.%20Architecture%2C%20API%20Security%20and%20Evolution.md) | Architecture styles, OWASP API risks, REST, GraphQL, gRPC and contract testing. |
 | [Research task · Order service API contracts](day-07-backend-apis/4.%20Research%20Task%20-%20Order%20Service%20API%20Contracts.md) | Authentication, cursor pagination, idempotent payment requests and consistent errors. |
 
+## Day 8 — Databases
+
+| File | What I cover |
+| --- | --- |
+| [Relational modelling and SQL](day-08-databases%20/1.%20Relational%20Modelling%20and%20SQL.md) | Tables, keys, constraints, an ER diagram, SELECT, JOIN, GROUP BY, and subqueries. |
+| [Normalisation, indexes and migrations](day-08-databases%20/2.%20Normalisation%2C%20Indexes%20and%20Migrations.md) | First to third normal form, denormalisation, index choices, and schema migrations. |
+| [Transactions, concurrency and query performance](day-08-databases%20/3.%20Transactions%2C%20Concurrency%20and%20Query%20Performance.md) | ACID, isolation levels, locks, MVCC, deadlocks, EXPLAIN, B-tree and composite indexes, and the N+1 problem. |
+| [Database connections and SQL vs NoSQL](day-08-databases%20/4.%20Database%20Connections%20and%20SQL%20vs%20NoSQL.md) | Connection pooling, RDS Proxy, and how to choose among relational, document, key-value, and wide-column stores. |
+| [Replication, high availability and database scaling](day-08-databases%20/5.%20Replication%2C%20High%20Availability%20and%20Database%20Scaling.md) | WAL, replica lag, Multi-AZ, PITR, partitioning, sharding, Redis cache-aside, vacuum, and optimiser statistics. |
+| [PostgreSQL tutorial](day-08-databases%20/6.%20PostgreSQL%20Tutorial.md) | A hands-on shop database with psql, SQL queries, transactions, views, query plans, and backup and restore. |
+
+## Day 9 — SaaS and Multi-Tenancy
+
+| File | What I cover |
+| --- | --- |
+| [SaaS foundations, tenant identity and billing](day-09-saas-multitenancy/1.%20SaaS%20Foundations%2C%20Tenant%20Identity%20and%20Billing.md) | Cloud service models, tenant identity and data models, plans, trials, and subscriptions. |
+| [Tenant isolation, onboarding and governance](day-09-saas-multitenancy/2.%20Tenant%20Isolation%2C%20Onboarding%20and%20Governance.md) | Authorisation, caching and jobs, domains and TLS, configuration, limits, metering, and data governance. |
+| [Scaling and operating a SaaS platform](day-09-saas-multitenancy/3.%20Scaling%20and%20Operating%20a%20SaaS%20Platform.md) | Noisy neighbours, tenant costs and migrations, control and data planes, sharding, and enterprise isolation. |
+| [Commerce SaaS research task](day-09-saas-multitenancy/Research%20Task%20-%20Commerce%20SaaS%20for%201000%20Merchants.md) | A concept design for 1,000 merchants with a tenant model and data-leakage comparison. |
+
+## Day 10 — System Design
+
+| File | What I cover |
+| --- | --- |
+| [System Design Foundations](day-10-system-design/1.%20System%20Design%20Foundations.md) | Requirements, rough estimates, scaling, building blocks, architecture styles, and caching. |
+| [Messaging, Resilience and Service Data](day-10-system-design/2.%20Messaging%2C%20Resilience%20and%20Service%20Data.md) | Sync and async calls, queue and stream tools, resilience, and data ownership. |
+| [Practice System Designs](day-10-system-design/3.%20Practice%20System%20Designs.md) | URL shortener, rate limiter, notification service, and ride matching. |
+| [Consistency, Transactions and Infrastructure](day-10-system-design/4.%20Consistency%2C%20Transactions%20and%20Infrastructure.md) | CAP, PACELC, sagas, outbox and inbox, discovery, mesh, tracing, and queueing. |
+| [Real-World Architecture Decisions](day-10-system-design/5.%20Real-World%20Architecture%20Decisions.md) | Architecture decisions at Uber, Grab, Shopify, Discord, Segment, and Prime Video. |
+
+## Day 11 — SDLC and Git
+
+| File | What I cover |
+| --- | --- |
+| [SDLC, Agile and Requirements](day-11-sdlc-git/1.%20SDLC%2C%20Agile%20and%20Requirements.md) | SDLC, Agile, Scrum, Kanban, user stories, acceptance criteria, and Jira. |
+| [Git Workflow and History](day-11-sdlc-git/2.%20Git%20Workflow%20and%20History.md) | Branch and pull request workflow, trunk-based development, GitFlow, history commands, and commit quality. |
+| [Team Review and Testing](day-11-sdlc-git/3.%20Team%20Review%20and%20Testing.md) | Readiness and completion standards, code review, a PR template, and the testing pyramid. |
+| [Git Internals, Releases and Delivery](day-11-sdlc-git/4.%20Git%20Internals%2C%20Releases%20and%20Delivery.md) | Git objects and refs, reflog and bisect, releases, ADRs, incident reviews, DORA, and secure delivery. |
+
 ## Presentations
 
 [Presentation folder](presentations/README.md). The syllabus schedules CP-1 after Days 1–3 and CP-2 after Days 4–6. The folder currently contains a README.
+
+## Production Software Engineering with AI-Assisted Development
+
+AI can help me write code. I am responsible for understanding the system, securing it, deploying it, and keeping it reliable in production. These are the questions I want to be able to answer before and after I ship an application.
+
+| Area | Questions I ask | Topics I study |
+| --- | --- | --- |
+| **1. Databases** | Where do I store the data, and how do I organise it? | SQL vs. NoSQL, PostgreSQL, MongoDB, schema design, indexes, transactions, normalisation, connection pooling, read replicas, and sharding. |
+| **2. Encryption** | How do I protect data in transit and at rest? | HTTPS and TLS, encryption in transit, encryption at rest, password hashing, bcrypt and Argon2, AES, public and private keys, SSL/TLS certificates, key management services (KMS), and encrypted backups. |
+| **3. Authentication and authorisation** | How do I decide who can sign in and what they can do? | Sessions and cookies, JWTs, refresh tokens, OAuth 2.0, Google and GitHub sign-in, role-based access, permissions, two-factor authentication, password reset flows, and login rate limits. |
+| **4. Secrets management** | How do I check whether I have exposed API keys or other secrets? | Environment variables, keeping `.env` files out of Git, secrets managers, making API calls from the server, keeping secret keys out of frontend code, key rotation, least privilege, leaks in Git history, secret scanning, and webhook signatures. |
+| **5. Security** | How do I protect my application against SQL injection and other common web vulnerabilities? | SQL injection prevention, parameterised queries, input validation, cross-site scripting (XSS), cross-site request forgery (CSRF), cross-origin resource sharing (CORS), security headers, the OWASP Top 10, dependency audits, and penetration testing. |
+| **6. Networking** | How does a request reach my server? | DNS, IP addresses, TCP and UDP, HTTP and HTTPS, ports, reverse proxies, and Nginx. |
+| **7. System design** | How do the parts of my system fit together, and what trade-offs did I make? | Client–server architecture, monoliths vs. microservices, API design, REST and GraphQL, caching strategies, the CAP theorem, consistency, event-driven design, publish/subscribe messaging, and architectural trade-offs. |
+| **8. Scaling** | How would my system handle 10,000 users arriving at once? | Load balancers, horizontal scaling, stateless servers, Redis caching, content delivery networks (CDNs), message queues, background workers, autoscaling, database scaling, and rate limiting. |
+| **9. Load testing** | How do I test my system under expected, sustained, and sudden load? | Load testing, stress testing, spike testing, k6, JMeter, p95 and p99 latency, throughput, bottleneck identification, profiling, and benchmarks. |
+| **10. Software testing** | How would I catch a bug introduced by an AI-generated change? | Unit tests, integration tests, end-to-end tests, Playwright, mocks, test coverage, test-driven development (TDD), regression tests, tests in continuous integration (CI), and code review. |
+| **11. Deployment** | How do I get my application from my machine to production? | Docker, CI/CD, GitHub Actions, AWS, Kubernetes, environment-specific configuration, and custom domains. |
+| **12. Disaster recovery** | How would I restore service and data after a failure? | Automated backups, point-in-time recovery, restore drills, snapshots, replication, failover, multi-region architecture, recovery point objectives (RPOs), recovery time objectives (RTOs), recovery plans, and data retention. |
+| **13. Monitoring** | How will I know my system is failing before users report it? | Logging, error tracking, Sentry, metrics, dashboards, alerts, uptime checks, health checks, distributed tracing, and incident postmortems. |
+
+Adapted from [Himanshu Raj Singour’s Facebook reel](https://www.facebook.com/reel/1167953322231996).
+
+## Study Notes and Assignments — Days 5–11
+
+| Folder or resource | What it contains |
+| --- | --- |
+| [Day 5 — Frontend Architecture and System Design](day-05-frontend-system-design/README.md) | HTML and CSS, state management, API integration, frontend design exercises, and the React product listing assignment. |
+| [Day 6 — React and Frontend Frameworks](day-06-Frontend%20Frameworks%3A%20React/README.md) | React fundamentals and Hooks, routing, debugging, performance, and framework migration. |
+| [Day 7 — Backend Design, APIs and Security](day-07-backend-apis/README.md) | REST API design, authentication and authorisation, API reliability, and the order service research task. |
+| [Day 8 — Databases](day-08-databases%20/README.md) | Relational modelling and SQL, normalisation, migrations, transactions, query plans, connection pooling, NoSQL, replication, caching, and a hands-on PostgreSQL tutorial. |
+| [Day 9 — SaaS and Multi-Tenancy](day-09-saas-multitenancy/README.md) | Tenant identity and isolation, billing, onboarding, governance, and a commerce SaaS design for 1,000 merchants with a data-leakage risk comparison. |
+| [Day 10 — System Design](day-10-system-design/README.md) | Requirements and estimates, scaling and messaging, resilience, distributed systems, four practice designs, and six engineering case studies. |
+| [Day 11 — SDLC and Git](day-11-sdlc-git/README.md) | Agile and Jira, requirements, Git workflows and internals, review and testing, releases, engineering records, and secure delivery. |
+| [Production Software Engineering with AI-Assisted Development](#production-software-engineering-with-ai-assisted-development) | A checklist of 13 production topics, from databases and security to deployment, disaster recovery, and monitoring. |
