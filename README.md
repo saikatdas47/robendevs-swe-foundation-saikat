@@ -137,15 +137,3 @@ AI can help me write code. I am responsible for understanding the system, securi
 
 Adapted from [Himanshu Raj Singour’s Facebook reel](https://www.facebook.com/reel/1167953322231996).
 
-## Study Notes and Assignments — Days 5–11
-
-| Folder or resource | What it contains |
-| --- | --- |
-| [Day 5 — Frontend Architecture and System Design](day-05-frontend-system-design/README.md) | HTML and CSS, state management, API integration, frontend design exercises, and the React product listing assignment. |
-| [Day 6 — React and Frontend Frameworks](day-06-Frontend%20Frameworks%3A%20React/README.md) | React fundamentals and Hooks, routing, debugging, performance, and framework migration. |
-| [Day 7 — Backend Design, APIs and Security](day-07-backend-apis/README.md) | REST API design, authentication and authorisation, API reliability, and the order service research task. |
-| [Day 8 — Databases](day-08-databases%20/README.md) | Relational modelling and SQL, normalisation, migrations, transactions, query plans, connection pooling, NoSQL, replication, caching, and a hands-on PostgreSQL tutorial. |
-| [Day 9 — SaaS and Multi-Tenancy](day-09-saas-multitenancy/README.md) | Tenant identity and isolation, billing, onboarding, governance, and a commerce SaaS design for 1,000 merchants with a data-leakage risk comparison. |
-| [Day 10 — System Design](day-10-system-design/README.md) | Requirements and estimates, scaling and messaging, resilience, distributed systems, four practice designs, and six engineering case studies. |
-| [Day 11 — SDLC and Git](day-11-sdlc-git/README.md) | Agile and Jira, requirements, Git workflows and internals, review and testing, releases, engineering records, and secure delivery. |
-| [Production Software Engineering with AI-Assisted Development](#production-software-engineering-with-ai-assisted-development) | A checklist of 13 production topics, from databases and security to deployment, disaster recovery, and monitoring. |
