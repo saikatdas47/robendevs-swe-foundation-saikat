@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 510" width="1200" height="510" role="img" aria-labelledby="title desc">
+  <title id="title">Three tenant data models</title>
+  <desc id="desc">Shared schema routes tenants A and B to one orders table with a tenant ID. Schema per tenant routes them to separate schemas in one database. Database per tenant routes them to separate databases.</desc>
+  <metadata>Original diagram based on the Day 9 notes. Further reading: https://docs.aws.amazon.com/solutions/multi-tenant-architectures-on-aws/</metadata>
+  <defs>
+    <marker id="tip" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L7 4L0 8Z" fill="#57677e"/></marker>
+  </defs>
+  <rect width="1200" height="510" fill="#f4f7fb"/>
+  <g fill="#fff" stroke="#cdd7e6" stroke-width="2">
+    <rect x="27" y="98" width="366" height="367" rx="16"/>
+    <rect x="417" y="98" width="366" height="367" rx="16"/>
+    <rect x="807" y="98" width="366" height="367" rx="16"/>
+  </g>
+  <g fill="#e8f1ff" stroke="#799bd0">
+    <rect x="54" y="177" width="126" height="42" rx="8"/><rect x="239" y="177" width="126" height="42" rx="8"/>
+    <rect x="444" y="177" width="126" height="42" rx="8"/><rect x="629" y="177" width="126" height="42" rx="8"/>
+    <rect x="834" y="177" width="126" height="42" rx="8"/><rect x="1019" y="177" width="126" height="42" rx="8"/>
+  </g>
+  <g fill="#f0f6f4" stroke="#86a69b" stroke-width="2">
+    <rect x="53" y="277" width="314" height="134" rx="10"/>
+    <rect x="443" y="277" width="314" height="134" rx="10"/>
+    <rect x="833" y="277" width="145" height="134" rx="10"/>
+    <rect x="1002" y="277" width="145" height="134" rx="10"/>
+  </g>
+  <g fill="#fff" stroke="#98b1a8">
+    <rect x="78" y="332" width="264" height="57" rx="6"/>
+    <rect x="455" y="332" width="137" height="57" rx="6"/>
+    <rect x="608" y="332" width="137" height="57" rx="6"/>
+  </g>
+  <g fill="none" stroke="#57677e" stroke-width="2" marker-end="url(#tip)">
+    <path d="M117 219v24h71v28"/><path d="M302 219v24h-71v28"/>
+    <path d="M507 219v31h16v76"/><path d="M692 219v31h-16v76"/>
+    <path d="M897 219v24h8v28"/><path d="M1082 219v24h-8v28"/>
+  </g>
+  <g fill="#14243b" font-family="system-ui, sans-serif" text-anchor="middle">
+    <text x="600" y="60" font-size="36" font-weight="700">Three tenant data models</text>
+    <g font-size="23" font-weight="650">
+      <text x="210" y="146">Shared schema</text><text x="600" y="146">Schema per tenant</text><text x="990" y="146">Database per tenant</text>
+    </g>
+    <g font-size="16">
+      <text x="117" y="204">Tenant A</text><text x="302" y="204">Tenant B</text>
+      <text x="507" y="204">Tenant A</text><text x="692" y="204">Tenant B</text>
+      <text x="897" y="204">Tenant A</text><text x="1082" y="204">Tenant B</text>
+      <text x="210" y="308">One database</text><text x="600" y="308">One database</text>
+      <text x="905" y="324">Database A</text><text x="1074" y="324">Database B</text>
+      <text x="210" y="366">orders filtered by tenant_id</text>
+      <text x="524" y="366">tenant_a.orders</text><text x="677" y="366">tenant_b.orders</text>
+      <text x="905" y="369">orders</text><text x="1074" y="369">orders</text>
+      <text x="210" y="442">Rows share one table</text>
+      <text x="600" y="442">Schemas share one database</text>
+      <text x="990" y="442">Each tenant has its own database</text>
+    </g>
+  </g>
+</svg>
