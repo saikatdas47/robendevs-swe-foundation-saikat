@@ -1,5 +1,3 @@
-# RoBenDevs Foundation Programme
-
 My notes, research tasks and coding assignments for Days 1–11, organised by the folders in this repository.
 
 ## Day 1 — Networking, DNS, HTTP/HTTPS and Traffic Routing
